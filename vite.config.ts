@@ -4,18 +4,34 @@ import path from 'path';
 import fs from 'fs';
 import {defineConfig, Plugin} from 'vite';
 
-function copyIndexTo404(): Plugin {
+function copyDistOutputs(): Plugin {
   return {
-    name: 'copy-index-to-404',
+    name: 'copy-dist-outputs',
     closeBundle() {
       try {
-        const indexPath = path.resolve(__dirname, 'dist', 'index.html');
-        const notFoundPath = path.resolve(__dirname, 'dist', '404.html');
+        const distDir = path.resolve(__dirname, 'dist');
+        const docsDir = path.resolve(__dirname, 'docs');
+        const indexPath = path.resolve(distDir, 'index.html');
+        const notFoundPath = path.resolve(distDir, '404.html');
+        const noJekyllPath = path.resolve(distDir, '.nojekyll');
+
+        // Copy index.html to 404.html in dist
         if (fs.existsSync(indexPath)) {
           fs.copyFileSync(indexPath, notFoundPath);
         }
+
+        // Ensure .nojekyll in dist
+        fs.writeFileSync(noJekyllPath, '');
+
+        // Mirror dist to docs/ folder so GitHub Pages '/docs' option works out of the box
+        if (fs.existsSync(distDir)) {
+          if (!fs.existsSync(docsDir)) {
+            fs.mkdirSync(docsDir, { recursive: true });
+          }
+          fs.cpSync(distDir, docsDir, { recursive: true });
+        }
       } catch (err) {
-        console.warn('Could not copy 404.html:', err);
+        console.warn('Could not complete post-build copy:', err);
       }
     },
   };
@@ -24,7 +40,7 @@ function copyIndexTo404(): Plugin {
 export default defineConfig(() => {
   return {
     base: './',
-    plugins: [react(), tailwindcss(), copyIndexTo404()],
+    plugins: [react(), tailwindcss(), copyDistOutputs()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
