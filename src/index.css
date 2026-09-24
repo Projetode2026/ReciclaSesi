@@ -1,0 +1,336 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #f0fdf4;
+    color: #1e293b;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Dedicated High-Performance Fluid Moving Background Gradient */
+  .animated-eco-bg {
+    background: linear-gradient(
+      -45deg,
+      #ecfdf5,
+      #dcfce7,
+      #fefce8,
+      #e0f2fe,
+      #f0fdf4,
+      #d1fae5,
+      #ecfdf5
+    );
+    background-size: 400% 400%;
+    animation: ecoGradientFlow 14s ease infinite;
+    will-change: background-position;
+  }
+
+  /* Flowing Abstract Eco Ribbons & Light Shapes in Background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: -15%;
+    width: 80vw;
+    height: 80vw;
+    max-width: 900px;
+    max-height: 900px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.45;
+    background: radial-gradient(circle at 40% 40%, rgba(52, 211, 153, 0.35) 0%, rgba(167, 243, 208, 0.2) 45%, transparent 70%);
+    filter: blur(60px);
+    animation: floatEcoRibbon1 24s ease-in-out infinite alternate;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -25%;
+    right: -15%;
+    width: 85vw;
+    height: 85vw;
+    max-width: 950px;
+    max-height: 950px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+    background: radial-gradient(circle at 60% 60%, rgba(45, 212, 191, 0.3) 0%, rgba(187, 247, 208, 0.25) 45%, transparent 70%);
+    filter: blur(65px);
+    animation: floatEcoRibbon2 28s ease-in-out infinite alternate;
+  }
+
+  /* Custom Clean Scrollbar for Light Theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* Background Moving Eco Gradient Keyframes */
+@keyframes ecoGradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes ecoMovingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating Eco Ambient Ribbons */
+@keyframes floatEcoRibbon1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(70px, 50px) scale(1.08) rotate(25deg);
+  }
+  100% {
+    transform: translate(-40px, 80px) scale(0.96) rotate(45deg);
+  }
+}
+
+@keyframes floatEcoRibbon2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-60px, -50px) scale(1.06) rotate(-20deg);
+  }
+  100% {
+    transform: translate(50px, -70px) scale(0.94) rotate(-40deg);
+  }
+}
+
+/* Gentle Float Animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(6px, -5px) scale(1.01);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+/* Glowing Border and Shimmer for Action Button */
+@keyframes btnPulseGlow {
+  0%, 100% {
+    box-shadow: 0 8px 24px -4px rgba(5, 150, 105, 0.35), 0 0 0 0 rgba(16, 185, 129, 0.25);
+  }
+  50% {
+    box-shadow: 0 12px 30px -2px rgba(5, 150, 105, 0.45), 0 0 16px 3px rgba(16, 185, 129, 0.35);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-150%) rotate(25deg);
+  }
+  20%, 100% {
+    transform: translateX(300%) rotate(25deg);
+  }
+}
+
+#btn-reciclar-agora {
+  position: relative;
+  overflow: hidden;
+  animation: btnPulseGlow 3.5s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#btn-reciclar-agora::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 45%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: translateX(-150%) rotate(25deg);
+  animation: shimmerSweep 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+#btn-reciclar-agora:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 32px -2px rgba(5, 150, 105, 0.5), 0 0 20px 4px rgba(16, 185, 129, 0.4);
+}
+
+#btn-reciclar-agora:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+/* Bin Pulse & Glow Effects - Soft and Natural (No Harsh Neon) */
+@keyframes binPulseBio {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.3), 0 8px 20px -4px rgba(217, 119, 6, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 18px 4px rgba(245, 158, 11, 0.35), 0 10px 24px -2px rgba(217, 119, 6, 0.22);
+  }
+}
+
+@keyframes binPulseRec {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.3), 0 8px 20px -4px rgba(5, 150, 105, 0.15);
+  }
+  100% {
+    box-shadow: 0 0 18px 4px rgba(16, 185, 129, 0.4), 0 10px 24px -2px rgba(5, 150, 105, 0.22);
+  }
+}
+
+#trash-bin-biodegradavel {
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#trash-bin-biodegradavel:hover {
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow: 0 8px 24px -4px rgba(217, 119, 6, 0.14), 0 0 12px 2px rgba(245, 158, 11, 0.1);
+}
+
+#trash-bin-reciclavel {
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#trash-bin-reciclavel:hover {
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 8px 24px -4px rgba(5, 150, 105, 0.14), 0 0 12px 2px rgba(16, 185, 129, 0.1);
+}
+
+/* Active Bin Pulse animations */
+#trash-bin-biodegradavel.scale-105,
+#trash-bin-biodegradavel[class*="ring-amber"] {
+  animation: binPulseBio 0.9s ease-in-out infinite alternate;
+}
+
+#trash-bin-reciclavel.scale-105,
+#trash-bin-reciclavel[class*="ring-emerald"] {
+  animation: binPulseRec 0.9s ease-in-out infinite alternate;
+}
+
+/* Inventory Containers Glow */
+#inventario-biodegradavel {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#inventario-biodegradavel:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 6px 20px -4px rgba(217, 119, 6, 0.1);
+}
+
+#inventario-reciclavel {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#inventario-reciclavel:hover {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 6px 20px -4px rgba(5, 150, 105, 0.1);
+}
+
+/* Clean Light Glassmorphism Styles with High Contrast */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+}
+
+.glass-card-light {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-light:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 10px 28px -4px rgba(16, 185, 129, 0.12), 0 0 16px 2px rgba(16, 185, 129, 0.08);
+  transform: translateY(-3px) scale(1.015);
+}
+
+.glass-card-emerald {
+  background: rgba(240, 253, 244, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(167, 243, 208, 0.9);
+  box-shadow: 0 4px 16px -2px rgba(16, 185, 129, 0.06);
+}
+
+.glass-card-amber {
+  background: rgba(254, 252, 232, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(253, 230, 138, 0.9);
+  box-shadow: 0 4px 16px -2px rgba(217, 119, 6, 0.06);
+}
+
+/* Fade in animation for modals */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+

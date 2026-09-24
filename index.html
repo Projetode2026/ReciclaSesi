@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RECICLA ♻️ SESI | Sesiverso</title>
+    <script>
+      (function() {
+        try {
+          var _origFetch = window.fetch;
+          var _customFetch = _origFetch ? _origFetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _customFetch;
+            },
+            set: function(fn) {
+              _customFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          console.warn('Fetch patch warning:', e);
+        }
+      })();
+    </script>
+    <meta name="description" content="Projeto interativo do Sesiverso com animação no scroll para descarte correto de resíduos nas lixeiras biodegradáveis e recicláveis." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#f0f9f1] text-slate-800 font-['Poppins',sans-serif] selection:bg-emerald-500/20 selection:text-emerald-900 antialiased overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

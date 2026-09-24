@@ -1,0 +1,8 @@
+{
+  "name": "Remix RECICLA ♻️ SESI",
+  "description": "Plataforma oficial do projeto RECICLA SESI com conteúdo educacional, catálogo interativo de resíduos e animação fluida on-click dos materiais voando para as lixeiras corretas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
