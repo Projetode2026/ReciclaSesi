@@ -8,7 +8,8 @@ export interface WasteItem {
   material: string;
   decompositionTime: string;
   description: string;
-  sesiTip: string;
+  tip: string;
+  sesiTip?: string;
   iconType: string;
   color: string;
   accentColor: string;

@@ -92,17 +92,17 @@ export const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
           {item.description}
         </p>
 
-        {/* SESI Environmental Tip */}
-        <div className="rounded-2xl p-4 bg-emerald-50/80 border border-emerald-200 flex items-start gap-3 shadow-sm">
-          <div className="p-2 rounded-xl bg-emerald-100 text-emerald-800 shrink-0 mt-0.5">
+        {/* Sustainable Tip Highlight */}
+        <div className="rounded-2xl p-4 bg-emerald-50/90 border border-emerald-200 flex items-start gap-3 shadow-xs">
+          <div className="p-2 rounded-xl bg-emerald-100 text-emerald-800 shrink-0 mt-0.5 shadow-2xs">
             <Lightbulb className="w-5 h-5" />
           </div>
           <div>
             <div className="text-xs font-extrabold text-emerald-900 uppercase tracking-wider flex items-center gap-1.5 font-['Montserrat']">
               <Sparkles className="w-3.5 h-3.5 text-emerald-700" /> Dica Sustentável Sesiverso
             </div>
-            <p className="text-xs text-slate-700 mt-1 leading-relaxed font-normal">
-              {item.sesiTip}
+            <p className="text-xs sm:text-sm text-slate-700 mt-1 leading-relaxed font-normal">
+              {item.tip || item.sesiTip}
             </p>
           </div>
         </div>
