@@ -299,40 +299,19 @@ export default function App() {
       {/* 0. DYNAMIC MOVING BACKGROUND GRADIENT (Fluid Color Motion) */}
       <div
         id="animated-gradient-bg"
-        className="fixed inset-0 pointer-events-none z-0 animated-eco-bg"
+        className="fixed inset-0 w-full h-full pointer-events-none z-0 animated-eco-bg"
       />
 
-      {/* Decorative Eco-Friendly Floating Wave Ribbons Background */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-45">
-        <svg
-          className="absolute -top-24 -left-24 w-[120vw] h-[120vh] max-w-none text-emerald-400/25 animate-float-slow"
-          viewBox="0 0 1440 900"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M-100 200 C300 100 600 500 1100 300 C1300 220 1500 400 1600 350 L1600 900 L-100 900 Z"
-            fill="url(#ecoWaveGrad1)"
-            opacity="0.5"
-          />
-          <path
-            d="M-50 450 C400 350 700 700 1200 480 C1400 400 1550 550 1650 500 L1650 900 L-50 900 Z"
-            fill="url(#ecoWaveGrad2)"
-            opacity="0.35"
-          />
-          <defs>
-            <linearGradient id="ecoWaveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#a7f3d0" stopOpacity="0.6" />
-              <stop offset="50%" stopColor="#6ee7b7" stopOpacity="0.25" />
-              <stop offset="100%" stopColor="#ccfbf1" stopOpacity="0.4" />
-            </linearGradient>
-            <linearGradient id="ecoWaveGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#d1fae5" stopOpacity="0.5" />
-              <stop offset="50%" stopColor="#fef08a" stopOpacity="0.2" />
-              <stop offset="100%" stopColor="#a7f3d0" stopOpacity="0.3" />
-            </linearGradient>
-          </defs>
-        </svg>
+      {/* Decorative Full-Coverage Eco-Friendly Ambient Lighting Mesh (No hard cutoffs) */}
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        {/* Top-Left Organic Glow */}
+        <div className="absolute -top-[15%] -left-[10%] w-[65vw] h-[65vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-br from-emerald-300/30 via-teal-200/20 to-transparent blur-[90px] animate-float-slow" />
+        
+        {/* Center-Right Warm Sunlight Glow */}
+        <div className="absolute top-[25%] -right-[15%] w-[60vw] h-[60vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-bl from-amber-200/25 via-emerald-200/20 to-transparent blur-[100px] animate-float-slow" style={{ animationDelay: '-4s' }} />
+        
+        {/* Bottom Full-Bleed Ambient Waves Glow (Extends completely down without borders) */}
+        <div className="absolute bottom-0 left-0 right-0 h-[70vh] w-full bg-gradient-to-t from-emerald-100/40 via-teal-50/20 to-transparent blur-[60px]" />
       </div>
 
       {/* 1. STICKY HEADER */}
@@ -392,8 +371,8 @@ export default function App() {
             <span className="text-emerald-400">•</span>
             <span className="text-slate-600 font-medium">Iniciativa Sesiverso de Educação Ambiental</span>
           </div>
-          <div className="text-slate-500 font-normal">
-            Separação Consciente: Orgânico & Reciclável | Futuro Sustentável • Paulo Jorge © 2026
+          <div className="text-slate-400 font-normal text-[10px] sm:text-[11px] opacity-70">
+            Separação Consciente: Orgânico & Reciclável • Futuro Sustentável
           </div>
         </div>
       </footer>

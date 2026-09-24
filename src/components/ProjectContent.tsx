@@ -115,7 +115,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
       </section>
 
 
-      {/* 2. SOBRE O PROJETO RECICLA SESI */}
+      {/* 2. SOBRE O PROJETO */}
       <section id="sobre" className="w-full space-y-6 scroll-mt-24">
         
         <div className="flex items-center gap-3">
@@ -124,10 +124,10 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
           </div>
           <div>
             <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-700 font-['Montserrat']">
-              Pilares do Projeto
+              Sobre o Projeto
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-['Montserrat']">
-              Sobre o Projeto RECICLA SESI
+              Como surgiu e se desenvolveu?
             </h2>
           </div>
         </div>
@@ -135,10 +135,10 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
         {/* Main Text Card */}
         <div className="glass-card-light rounded-3xl p-6 sm:p-8 space-y-4">
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-            O <strong>RECICLA SESI</strong> é um projeto desenvolvido para incentivar a separação correta de resíduos na escola por meio de uma proposta simples e eficiente: a utilização de apenas <strong>duas lixeiras principais</strong>, sendo uma para resíduos biodegradáveis e outra para materiais recicláveis.
+            O projeto surgiu a partir do incentivo dos professores, com a mentoria do professor Matheus Campista e a participação dos alunos na construção da proposta. A ideia nasceu da necessidade de tornar a separação dos resíduos mais simples e prática dentro do ambiente escolar.
           </p>
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-            Em vez de adotar o modelo tradicional com várias lixeiras para cada tipo de material, o projeto foca na praticidade do descarte cotidiano. Ao simplificar as opções, torna-se muito mais fácil para alunos, professores e funcionários compreenderem e realizarem a separação correta, garantindo um ambiente escolar limpo, higiênico e sustentável.
+            Ao longo do desenvolvimento, foram realizadas pesquisas e análises para encontrar uma forma eficiente de implementar a coleta seletiva na escola. A partir disso, foi definida a utilização de duas lixeiras principais: uma para resíduos orgânicos e outra para materiais recicláveis. A proposta foi aplicada nas salas e nos espaços externos da escola, facilitando o descarte correto e incentivando hábitos mais sustentáveis.
           </p>
         </div>
 

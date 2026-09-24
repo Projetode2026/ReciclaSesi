@@ -33,7 +33,9 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
             ♻️
           </div>
           <div>
-            <div className="text-[11px] uppercase font-black tracking-widest text-emerald-700 font-['Montserrat']">Guia do Usuário</div>
+            <div className="text-[11px] uppercase font-black tracking-widest text-emerald-700 font-['Montserrat']">
+              Guia do Usuário
+            </div>
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight font-['Montserrat']">
               RECICLA ♻️ SESI
             </h3>
@@ -82,7 +84,10 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           </div>
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex items-center justify-between pt-1">
+          <span className="text-[10px] text-slate-300 font-normal select-none">
+            Paulo Jorge
+          </span>
           <button
             onClick={onClose}
             className="px-7 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-md hover:shadow-lg active:scale-95 transition-all flex items-center gap-2 cursor-pointer font-['Montserrat']"

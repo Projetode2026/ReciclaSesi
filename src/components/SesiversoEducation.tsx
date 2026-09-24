@@ -18,7 +18,7 @@ export const SesiversoEducation: React.FC<SesiversoEducationProps> = ({ onScroll
           Como Funciona a <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-emerald-400 bg-clip-text text-transparent">Separação Correta</span>?
         </h2>
         <p className="text-sm sm:text-base text-emerald-200/80 max-w-2xl mx-auto mt-3 font-normal leading-relaxed">
-          No SESI, aprender sobre reciclagem e compostagem desenvolve consciência ecológica e cidadania para o futuro sustentável do planeta.
+          Aprender sobre reciclagem e compostagem desenvolve consciência ecológica e cidadania para o futuro sustentável do planeta.
         </p>
       </div>
 
